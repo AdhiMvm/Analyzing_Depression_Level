@@ -1,0 +1,41 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Determining depression Diagnosis",
+    "section": "",
+    "text": "Depression is a serious mental health condition that affects millions of people around the world. It can be difficult to recognize the signs and symptoms, and many people struggle to get the help they need. This project is dedicated to analyzing some of the factors that might help us predict depression.\n\n\n\n\n\n\n\n\n\nThe plot above suggests that there might not be a strong connection between a person’s weight and their risk of depression. This means that having a higher or lower BMI doesn’t necessarily mean someone will experience depression."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Hello, My name is Adhithan Manivassakam and for the 2024-2025 school year, I will be attending Adlai E Stevenson High School as a senior. You can contact me through email: adhithan.mvsm@gmail.com\nThis project was created as part of Kane’s Data Science Bootcamp, and can be found at https://github.com/AdhiMvm/Analyzing_Depression_Level.git",
+    "crumbs": [
+      "About Me"
+    ]
+  },
+  {
+    "objectID": "sources.html",
+    "href": "sources.html",
+    "title": "Sources",
+    "section": "",
+    "text": "The Data for this project was sourced from kaggle. The dataset contains information regarding depression and anxiety among primarily college aged adults.",
+    "crumbs": [
+      "About Me",
+      "Sources"
+    ]
+  },
+  {
+    "objectID": "model.html",
+    "href": "model.html",
+    "title": "Model",
+    "section": "",
+    "text": "Estimate  Est.Error        Q2.5      Q97.5\nIntercept -6.7037892 1.44177651 -9.52381228 -3.8553249\nage        0.1517260 0.06727163  0.01668125  0.2798496\ngender     0.3928052 0.27453893 -0.14588800  0.9466423\nsuicidal   0.3705045 0.40610193 -0.46674280  1.1289525\nphq_score  0.1129979 0.02905443  0.05737181  0.1700719\n\n\n\n\n\n\n\n\n\nUsing the summary from the binomial Bayesian model, it is reasonable to assume that phq score, age and suicidal intentions are veritable predictors of depression levels, since they are all positively correlated with depression diagnosis.",
+    "crumbs": [
+      "About Me",
+      "Model"
+    ]
+  }
+]

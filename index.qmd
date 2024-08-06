@@ -1,0 +1,39 @@
+---
+title: "Determining depression Diagnosis"
+author: Adhithan Manivassakam
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+
+```{r}
+data <- read_csv("depression_anxiety_data.csv")
+```
+
+Depression is a serious mental health condition that affects millions of people around the world. It can be difficult to recognize the signs and symptoms, and many people struggle to get the help they need. This project is dedicated to analyzing some of the factors that might help us predict depression. Using data from kaggle on the factors related to depression and anxiety related mental disorders, i modeled the likelihood that an individual has received a depression diagnosis. The binomial model found that age, gender, suicidal intention and phq_score are positively correlated with depression diagnosis, although this is not necessarily true in every case, it is a sensible correlation. 
+
+```{r}
+data1 <- data |>
+  mutate(depression_diagnosis = factor(depression_diagnosis))
+
+# Create the plot
+data1|> 
+  drop_na()|>
+  ggplot(mapping = aes(x = bmi, fill = depression_diagnosis)) +
+  geom_histogram(binwidth = 1) +
+  labs(title = "Depression Diagnosis across BMI",
+       x = "BMI", y = "Number of Diagnoses", fill = "Depression Diagnosis Group:") + 
+  scale_fill_manual(values = c("#F08080", "#FFD700")) +
+  theme_classic() +
+  theme(legend.position = "bottom")
+
+```
+
+The plot above suggests that there might not be a strong connection between a person's weight and their risk of depression. This means that having a higher or lower BMI doesn't necessarily mean someone will experience depression.

@@ -1,0 +1,43 @@
+---
+title: "Model"
+format: html
+execute:
+  warning: false
+  echo: false
+  message: false
+---
+
+
+
+```{r}
+#| label: setup
+#| message: false
+library(tidyverse)
+library(brms)
+library(tidybayes)
+library(gtsummary)
+```
+
+```{r}
+data <- read_csv("depression_anxiety_data.csv")
+```
+
+```{r}
+#|cache: true
+data_2 <- data |>
+  mutate(gender = ifelse(gender == "male", 0, 1),
+         suicidal = as.numeric(suicidal))
+
+d_model <- brm(depression_diagnosis ~ age + gender + suicidal + phq_score, 
+            data = data_2,
+            family = bernoulli,
+            refresh = 0, 
+            silent = 2, 
+            seed = 9) 
+
+fixef(d_model)
+pp_check(d_model)
+
+```
+
+Using the summary from the binomial Bayesian model, it is reasonable to assume that phq score, age and suicidal intentions are veritable predictors of depression levels, since they are all positively correlated with depression diagnosis.

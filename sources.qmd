@@ -1,0 +1,5 @@
+---
+title: "Sources"
+format: html
+---
+The Data for this project was sourced from [kaggle](https://www.kaggle.com/datasets/shahzadahmad0402/depression-and-anxiety-data/data). The dataset contains information regarding depression and anxiety among primarily college aged adults. 
