@@ -2,8 +2,19 @@
 title: "About Me"
 ---
 
-Hello, My name is [Adhithan Manivassakam](https://github.com/AdhiMvm) and for the 2024-2025 school year, I will be attending Adlai E Stevenson High School as a senior.
+Hello! I’m [Adhithan Manivassakam](https://github.com/AdhiMvm). 
 
-You can contact me through email: [adhithan.mvsm@gmail.com](adhithan.mvsm@gmail.com)
+For the 2024-2025 school year, I’ll be a senior at **Adlai E. Stevenson High School**. I am deeply passionate about **data science** and its potential to uncover insights that can lead to meaningful improvements in mental health. This project exemplifies my commitment to leveraging data-driven methods to enhance our understanding of psychological well-being and address critical issues in mental health.
 
-This project was created as part of [Kane's Data Science Bootcamp](https://bootcamp.davidkane.info/), and can be found at [https://github.com/AdhiMvm/Analyzing_Depression_Level.git](https://github.com/AdhiMvm/Analyzing_Depression_Level.git)
+## Contact Information
+
+Feel free to reach out to me via email: [adhithan.mvsm@gmail.com](mailto:adhithan.mvsm@gmail.com)
+
+## Project Overview
+
+This project was developed as part of **[Kane's Data Science Bootcamp](https://bootcamp.davidkane.info/)**. It explores the analysis of depression levels and is available on [GitHub](https://github.com/AdhiMvm/Analyzing_Depression_Level.git).
+
+## Thank you for visiting my page!
+
+
+

@@ -2,4 +2,5 @@
 title: "Sources"
 format: html
 ---
-The Data for this project was sourced from [kaggle](https://www.kaggle.com/datasets/shahzadahmad0402/depression-and-anxiety-data/data). The dataset contains information regarding depression and anxiety among primarily college aged adults. 
+The data for this project is sourced from [Kaggle](https://www.kaggle.com/datasets/shahzadahmad0402/depression-and-anxiety-data/data). It consists of responses from 787 undergraduate students at the University of Lahore and is inspired by the Beck Depression and Beck Anxiety Inventories. This rich dataset captures a wide range of depression and anxiety symptoms, offering valuable insights into mental health among college students. By analyzing this data, we can explore various machine learning approaches to classify and predict the severity of these conditions. This can ultimately contribute to better understanding and potentially improving mental health support for students.
+

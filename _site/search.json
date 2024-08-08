@@ -1,41 +1,65 @@
 [
   {
+    "objectID": "sources.html",
+    "href": "sources.html",
+    "title": "Sources",
+    "section": "",
+    "text": "The data for this project is sourced from Kaggle. It consists of responses from 787 undergraduate students at the University of Lahore and is inspired by the Beck Depression and Beck Anxiety Inventories. This rich dataset captures a wide range of depression and anxiety symptoms, offering valuable insights into mental health among college students. By analyzing this data, we can explore various machine learning approaches to classify and predict the severity of these conditions. This can ultimately contribute to better understanding and potentially improving mental health support for students."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Determining depression Diagnosis",
+    "title": "Determining Depression Diagnosis",
     "section": "",
-    "text": "Depression is a serious mental health condition that affects millions of people around the world. It can be difficult to recognize the signs and symptoms, and many people struggle to get the help they need. This project is dedicated to analyzing some of the factors that might help us predict depression.\n\n\n\n\n\n\n\n\n\nThe plot above suggests that there might not be a strong connection between a person’s weight and their risk of depression. This means that having a higher or lower BMI doesn’t necessarily mean someone will experience depression."
+    "text": "Depression is a serious mental health condition that affects millions of people around the world. It can be difficult to recognize the signs and symptoms, and many people struggle to get the help they need.This project investigates depression diagnosis among students using data from Kaggle, which includes responses from 787 undergraduates at the University of Lahore.\nWe modeled the likelihood of a depression diagnosis based on the Public Health Questionnaire(PHQ) score, age, and gender. The PHQ score, a common tool for assessing depression severity, indicates more severe symptoms with higher scores. Using a binomial regression model, we quantified how these factors influence depression probability among students aged 18 to 30.\nOur analysis shows that each 1-point increase in the PHQ score raises the odds of a depression diagnosis by approximately 14%. Additionally, females have about 45% higher odds of being diagnosed with depression compared to males. These findings highlight the significant impact of symptom severity and gender on depression diagnosis, emphasizing the need for targeted support and interventions for students."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About Me",
     "section": "",
-    "text": "Hello, My name is Adhithan Manivassakam and for the 2024-2025 school year, I will be attending Adlai E Stevenson High School as a senior. You can contact me through email: adhithan.mvsm@gmail.com\nThis project was created as part of Kane’s Data Science Bootcamp, and can be found at https://github.com/AdhiMvm/Analyzing_Depression_Level.git",
-    "crumbs": [
-      "About Me"
-    ]
-  },
-  {
-    "objectID": "sources.html",
-    "href": "sources.html",
-    "title": "Sources",
-    "section": "",
-    "text": "The Data for this project was sourced from kaggle. The dataset contains information regarding depression and anxiety among primarily college aged adults.",
-    "crumbs": [
-      "About Me",
-      "Sources"
-    ]
+    "text": "Hello! I’m Adhithan Manivassakam.\nFor the 2024-2025 school year, I’ll be a senior at Adlai E. Stevenson High School. I am deeply passionate about data science and its potential to uncover insights that can lead to meaningful improvements in mental health. This project exemplifies my commitment to leveraging data-driven methods to enhance our understanding of psychological well-being and address critical issues in mental health."
   },
   {
     "objectID": "model.html",
     "href": "model.html",
+    "title": "Model Results",
+    "section": "",
+    "text": "Estimate  Est.Error        Q2.5      Q97.5\nIntercept -6.7199203 1.42881141 -9.52273432 -3.8924379\nphq_score  0.1258819 0.02627009  0.07482524  0.1773645\ngender     0.3707443 0.27005021 -0.13170803  0.9095394\nage        0.1505712 0.06656828  0.01883365  0.2832794\n\n\n\n0.1 Interpretting the Results:\n\\[\n\\text{Log-Odds}(\\text{Depression\\ Diagnosis}) = \\beta_0 + \\beta_1 \\times \\text{PHQ\\ score} + \\beta_2 \\times \\text{gender} + \\beta_3 \\times \\text{age}\n\\]\nThe following interpretations apply to college students aged 18 to 30, assuming all other factors are held constant:\n\nPublic Health Questionaire Score:\n\nOdds Ratio: \\[\ne^{\\beta_1} = e^{0.13} \\approx 1.14\n\\]\nExplanation: Each 1-point increase in the PHQ score raises the odds of a depression diagnosis by approximately 14%.\n\nGender:\n\nOdds Ratio: \\[\ne^{\\beta_2} = e^{0.37} \\approx 1.45\n\\]\nExplanation: Being female increases the odds of a depression diagnosis by about 45% compared to being male.\n\nAge:\n\nOdds Ratio: \\[\ne^{\\beta_3} = e^{0.15} \\approx 1.16\n\\]\nExplanation: Each additional year of age increases the odds of a depression diagnosis by about 16%.\n\nIntercept:\n\nOdds Ratio: \\[\ne^{\\beta_0} = e^{-6.72} \\approx 0.001\n\\]\nExplanation: The intercept represents the baseline odds of depression diagnosis when all predictors are zero."
+  },
+  {
+    "objectID": "about.html#contact-information",
+    "href": "about.html#contact-information",
+    "title": "About Me",
+    "section": "1 Contact Information",
+    "text": "1 Contact Information\nFeel free to reach out to me via email: adhithan.mvsm@gmail.com"
+  },
+  {
+    "objectID": "about.html#project-overview",
+    "href": "about.html#project-overview",
+    "title": "About Me",
+    "section": "2 Project Overview",
+    "text": "2 Project Overview\nThis project was developed as part of Kane’s Data Science Bootcamp. It explores the analysis of depression levels and is available on GitHub."
+  },
+  {
+    "objectID": "about.html#thank-you-for-visiting-my-page",
+    "href": "about.html#thank-you-for-visiting-my-page",
+    "title": "About Me",
+    "section": "3 Thank you for visiting my page!",
+    "text": "3 Thank you for visiting my page!"
+  },
+  {
+    "objectID": "model.knit.html",
+    "href": "model.knit.html",
     "title": "Model",
     "section": "",
-    "text": "Estimate  Est.Error        Q2.5      Q97.5\nIntercept -6.7037892 1.44177651 -9.52381228 -3.8553249\nage        0.1517260 0.06727163  0.01668125  0.2798496\ngender     0.3928052 0.27453893 -0.14588800  0.9466423\nsuicidal   0.3705045 0.40610193 -0.46674280  1.1289525\nphq_score  0.1129979 0.02905443  0.05737181  0.1700719\n\n\n\n\n\n\n\n\n\nUsing the summary from the binomial Bayesian model, it is reasonable to assume that phq score, age and suicidal intentions are veritable predictors of depression levels, since they are all positively correlated with depression diagnosis.",
-    "crumbs": [
-      "About Me",
-      "Model"
-    ]
+    "text": "Estimate  Est.Error        Q2.5      Q97.5\nIntercept -6.7199203 1.42881141 -9.52273432 -3.8924379\nphq_score  0.1258819 0.02627009  0.07482524  0.1773645\ngender     0.3707443 0.27005021 -0.13170803  0.9095394\nage        0.1505712 0.06656828  0.01883365  0.2832794\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 783\n1\n\n\n\n\nphq_score\n6.0 (4.0, 9.0)\n\n\ngender\n403 (51%)\n\n\nage\n20.00 (19.00, 21.00)\n\n\n\n1\nMedian (Q1, Q3); n (%)"
+  },
+  {
+    "objectID": "model.html#interpretting-the-results",
+    "href": "model.html#interpretting-the-results",
+    "title": "Model Results",
+    "section": "Interpretting the Results:",
+    "text": "Interpretting the Results:\n\\[\n\\text{Log-Odds}(\\text{Depression\\ Diagnosis}) = \\beta_0 + \\beta_1 \\times \\text{PHQ\\ score} + \\beta_2 \\times \\text{gender} + \\beta_3 \\times \\text{age}\n\\]\n\nModel Results\n\nPatient Health Questionaire Score:\n\nOdds Ratio: ( e^{_1} ) where ( _1 = 0.13 )\nExplanation: Each 1-point increase in the PHQ score increases the odds of having a depression diagnosis by about 14%. This means that if someone’s PHQ score goes up by 1 point, their likelihood of being diagnosed with depression increases by 14%, assuming all other factors are constant. This finding is specific to college students aged 18 to 30.\n\nGender:\n\nOdds Ratio: ( e^{_2} ) where ( _2 = 0.37 )\nExplanation: Being female (coded as 1) increases the odds of being diagnosed with depression by about 45% compared to being male. In simpler terms, women are about 45% more likely to be diagnosed with depression than men, assuming all other factors remain the same. This finding is specific to college students aged 18 to 30.\n\nAge:\n\nOdds Ratio: ( e^{_3} ) where ( _3 = 0.15 )\nExplanation: Each additional year of age increases the odds of having a depression diagnosis by about 16%. This means that for each year someone gets older, their odds of being diagnosed with depression increase by 16%, with other factors held constant. This finding is specific to college students aged 18 to 30."
   }
 ]

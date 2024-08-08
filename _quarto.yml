@@ -2,28 +2,34 @@ project:
   type: website
 
 website:
-  title: "Understanding Depression"
+  title: "Understanding Depression Amongst College Students"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-  sidebar: 
-    - id: details
-      title: "Details"
-      style: "floating"
-      background: "#ffffff"
-      collapse-level: 1
-      contents: 
-        - about.qmd
-        - sources.qmd
-        - model.qmd
+      - href: model.qmd
+        text: Model
+      - href: about.qmd
+        text: About
+      - href: sources.qmd
+        text: Sources
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
     toc: true
+    toc-location: left
+    code-fold: true
+    number-sections: true
+    highlight: tango
+    self-contained: true
 
+editor:
+  theme: light
 
+execute:
+  echo: false
+  warning: false
+  message: false
 

@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 3d178533-79ea-4520-ad57-9c603c740f51
+      url: 'https://adhimvm.quarto.pub/understanding-depression'

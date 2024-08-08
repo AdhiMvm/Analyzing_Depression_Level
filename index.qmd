@@ -1,6 +1,5 @@
 ---
-title: "Determining depression Diagnosis"
-author: Adhithan Manivassakam
+title: "Determining Depression Diagnosis"
 execute:
   echo: false
   message: false
@@ -9,6 +8,7 @@ execute:
 
 ```{r}
 library(tidyverse)
+library(plotly)
 library(readr)
 ```
 
@@ -17,23 +17,69 @@ library(readr)
 data <- read_csv("depression_anxiety_data.csv")
 ```
 
-Depression is a serious mental health condition that affects millions of people around the world. It can be difficult to recognize the signs and symptoms, and many people struggle to get the help they need. This project is dedicated to analyzing some of the factors that might help us predict depression. Using data from kaggle on the factors related to depression and anxiety related mental disorders, i modeled the likelihood that an individual has received a depression diagnosis. The binomial model found that age, gender, suicidal intention and phq_score are positively correlated with depression diagnosis, although this is not necessarily true in every case, it is a sensible correlation. 
 
 ```{r}
-data1 <- data |>
-  mutate(depression_diagnosis = factor(depression_diagnosis))
+library(plotly)
+library(RColorBrewer)
 
-# Create the plot
-data1|> 
-  drop_na()|>
-  ggplot(mapping = aes(x = bmi, fill = depression_diagnosis)) +
-  geom_histogram(binwidth = 1) +
-  labs(title = "Depression Diagnosis across BMI",
-       x = "BMI", y = "Number of Diagnoses", fill = "Depression Diagnosis Group:") + 
-  scale_fill_manual(values = c("#F08080", "#FFD700")) +
-  theme_classic() +
-  theme(legend.position = "bottom")
+data_3 <- data |>
+  mutate(depression_severity = factor(depression_severity, levels = c("none", "None-minimal", "Mild", "Moderate", "Moderately Severe", "Severe")))
+
+num_levels <- nlevels(data_3$depression_severity)
+
+color_palette <- colorRampPalette(c("#32CD32", "#4B0082"))(num_levels)
+
+plot_ly(data_3, 
+        x = ~age, 
+        y = ~phq_score, 
+        z = ~depression_severity, 
+        color = ~depression_severity, 
+        colors = color_palette,
+        type = "scatter3d", 
+        mode = "markers",
+        marker = list(size = 5, opacity = 0.8, line = list(width = 2, color = 'rgba(217, 217, 217, 0.14)'))) %>%
+  layout(scene = list(
+    xaxis = list(title = "Age", titlefont = list(size = 11), tickfont = list(size = 10)),
+    yaxis = list(title = "PHQ Score", titlefont = list(size = 11), tickfont = list(size = 10)),
+    zaxis = list(title = "Depression Severity", titlefont = list(size = 11), tickfont = list(size = 10))
+  ),
+  legend = list(title = list(text = "Severity:"), font = list(size = 11)),
+  title = list(text = "Depression Severity Modeled in relation to Age and Public Health Questionaire Score.", font = list(size = 16)),
+  margin = list(l = 0, r = 0, b = 0, t = 40))
 
 ```
 
-The plot above suggests that there might not be a strong connection between a person's weight and their risk of depression. This means that having a higher or lower BMI doesn't necessarily mean someone will experience depression.
+
+
+
+Depression is a serious mental health condition that affects millions of people around the world. It can be difficult to recognize the signs and symptoms, and many people struggle to get the help they need.This project investigates depression diagnosis among students using data from Kaggle, which includes responses from 787 undergraduates at the University of Lahore.
+
+We modeled the likelihood of a depression diagnosis based on the Public Health Questionnaire(PHQ) score, age, and gender. The PHQ score, a common tool for assessing depression severity, indicates more severe symptoms with higher scores. Using a binomial regression model, we quantified how these factors influence depression probability among students aged 18 to 30.
+
+Our analysis shows that each 1-point increase in the PHQ score raises the odds of a depression diagnosis by approximately 14%. Additionally, females have about 45% higher odds of being diagnosed with depression compared to males. These findings highlight the significant impact of symptom severity and gender on depression diagnosis, emphasizing the need for targeted support and interventions for students.
+
+```{r}
+data <- data |>
+  mutate(gender = factor(gender))
+
+# Create a scatter plot with jitter and smooth lines for each gender
+ggplot(data, aes(x = age, y = phq_score, color = gender)) +
+  geom_jitter(size = 3, width = 0.2, alpha = 0.5) + 
+  geom_smooth(method = "loess", se = FALSE, size = 1) + 
+  labs(title = "PHQ Scores Across Age by Gender",
+       x = "Age",
+       y = "PHQ Score",
+       color = "Gender") +
+  scale_color_manual(values = c("male" = "#32CD32", "female" = "#4B0082")) +  
+  theme_classic() +
+  theme(
+    title = element_text(size = 16, face = "bold"),
+    axis.title = element_text(size = 14),
+    axis.text = element_text(size = 12),
+    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10)
+  )
+
+```
+
+
